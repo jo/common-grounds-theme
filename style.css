@@ -30,7 +30,11 @@ h1 {
   font-weight: bold;
   margin: 3ex 0;
 }
-
+h2 {
+  color: rgb(255, 97, 82);
+  font-weight: normal;
+  font-size: 1em;
+}
 a {
   color: rgb(18, 18, 18);
 }
@@ -98,6 +102,9 @@ a:focus {
 }
 
 /* Carousel */
+.carousel {
+  margin-top: -1px;
+}
 .carousel .item {
   height: 460px;
   background-repeat: no-repeat;
@@ -137,6 +144,24 @@ footer hr {
   border: none;
   border-top: 1px solid rgb(18, 18, 18);
   margin-bottom: 3ex;
+}
+
+/* content */
+.entry-content p {
+   -moz-column-count: 3;
+   -webkit-column-count: 3;
+   column-count: 3;
+
+  -moz-column-width: 23em;
+  -webkit-column-width: 23em;
+  column-width: 23em;
+
+  -moz-column-gap: 2em;
+  -webkit-column-gap: 2em;
+  column-gap: 2em;
+}
+hr {
+  border-color: rgb(18, 18, 18);
 }
 
 

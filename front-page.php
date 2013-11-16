@@ -15,8 +15,9 @@ get_header(); ?>
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
     <?php $posts = get_posts(array( 'post_type' => 'pp_slide', 'posts_per_page' => 100 )); ?> 
-    <?php $count = 1 ?>
+    <?php $count = 0 ?>
     <?php foreach ($posts as $post): ?>
+      <?php $count++ ?>
       <div class="item <?php if($count == 1) echo 'active' ?>" style="background-image: url(<?php getSliderImage() ?>)">
         <div class="container">
           <div class="carousel-caption">
@@ -24,10 +25,11 @@ get_header(); ?>
           </div>
         </div>
       </div>
-      <?php $count++ ?>
     <?php endforeach; ?>
     </div>
-    <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
-    <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+    <?php if($count > 1): ?>
+      <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+      <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+    <?php endif; ?>
   </div>
 <?php get_footer(); ?>
