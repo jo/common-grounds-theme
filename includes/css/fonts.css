@@ -1,0 +1,10 @@
+@font-face {
+  font-family: P22UndergroundPro;
+  font-weight: normal;
+  src: url("../fonts/P22UndergroundPro-Light.otf") format("opentype");
+}
+@font-face {
+  font-family: P22UndergroundPro;
+  font-weight: bold;
+  src: url("../fonts/P22UndergroundPro-Demi.otf") format("opentype");
+}
