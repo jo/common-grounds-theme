@@ -42,7 +42,7 @@ function commongrounds_setup() {
 		/**
 		 * Enable support for Post Formats
 		*/
-		add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'quote', 'link' ) );
+		// add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'quote', 'link' ) );
 	
     }
 
@@ -61,6 +61,8 @@ function commongrounds_setup() {
         'left'  => __( 'Header left menu', 'commongrounds' ),
         'center'  => __( 'Header center menu', 'commongrounds' ),
         'right'  => __( 'Header right menu', 'commongrounds' ),
+        'footer-left'  => __( 'Footer left menu', 'commongrounds' ),
+        'footer-right'  => __( 'Footer right menu', 'commongrounds' ),
     ) );
 
 }

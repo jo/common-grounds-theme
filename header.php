@@ -31,9 +31,7 @@
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
             <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
+            <span class="glyphicon glyphicon-chevron-down"></span>
           </button>
           <a class="navbar-brand visible-xs" href="<?php echo esc_url(home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo('name', 'display' ) ); ?>" rel="home"><img src="<?php echo get_template_directory_uri(); ?>/includes/images/common-grounds.svg" alt="common grounds"/></a>
         </div>
@@ -44,7 +42,7 @@
                       'container' => false,
                       'menu_class' => 'nav navbar-nav navbar-left',
                       'fallback_cb' => '',
-                      'menu_id' => 'main-menu',
+                      'menu_id' => 'main-menu-left',
                       'walker' => new wp_bootstrap_navwalker()
                   )
               ); ?>
@@ -54,7 +52,7 @@
                       'container' => false,
                       'menu_class' => 'nav navbar-nav',
                       'fallback_cb' => '',
-                      'menu_id' => 'main-menu',
+                      'menu_id' => 'main-menu-center',
                       'walker' => new wp_bootstrap_navwalker()
                   )
               ); ?>
@@ -64,7 +62,7 @@
                       'container' => false,
                       'menu_class' => 'nav navbar-nav navbar-right',
                       'fallback_cb' => '',
-                      'menu_id' => 'main-menu',
+                      'menu_id' => 'main-menu-right',
                       'walker' => new wp_bootstrap_navwalker()
                   )
               ); ?>

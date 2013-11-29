@@ -16,59 +16,94 @@ This theme, like WordPress, is licensed under the GPL.
 
 body {
   font-family: P22UndergroundPro;
-  font-size: 14pt;
   font-size: 11pt;
+  font-size: 10pt;
   color: rgb(18, 18, 18);
   background-color: rgb(240, 240, 240);
+  /*
+  background: white url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAABCAIAAAB7QOjdAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QsdCA0ADGo09wAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAD0lEQVQI12NgYGBgYGAAAAAHAAFf/HSpAAAAAElFTkSuQmCC) repeat-y top center;
+  */
 }
 
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   font-family: inherit;
 }
-h1 {
-  font-size: 1.7857142857142858em; /* 25pt */
-  font-weight: bold;
-  margin: 3ex 0;
-}
-h2 {
-  color: rgb(255, 97, 82);
-  font-weight: normal;
-  font-size: 1em;
-}
 a {
   color: rgb(18, 18, 18);
+  /*
+  text-decoration: underline;
+  */
+  -webkit-transition: color 0.4s;
+  -moz-transition: color 0.4s;
+  -o-transition: color 0.4s;
+  transition: color 0.4s;
 }
 a:hover,
 a:focus {
   color: rgb(255, 97, 82);
-  text-decoration: underline;
+}
+h1 a, h2 a {
+  text-decoration: none;
+}
+h1 {
+  font-size: 1.7857142857142858em; /* 25pt */
+  font-weight: bold;
+}
+h2 {
+  font-weight: bold;
+  font-size: 1em;
 }
 
-.navbar {
+header.navbar {
   font-size: 1.2857142857142858em; /* 18pt */
   background-color: white;
-  padding-bottom: 0.5ex;
+  /*
+  background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAABCAIAAAB7QOjdAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QsdCA0ADGo09wAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAD0lEQVQI12NgYGBgYGAAAAAHAAFf/HSpAAAAAElFTkSuQmCC) repeat-x center left;
+  */
   border-radius: 0;
   margin-bottom: 0;
 }
-.navbar h1.logo {
+header.navbar .container {
+  padding: 0;
+}
+.container > .navbar-header, .container > .navbar-collapse {
+  margin-left: 0;
+  margin-right: 0;
+}
+header.navbar h1.logo {
   margin: 1.5ex 0 0.75ex 0;
 }
-.navbar .visible-xs img {
-  height: 82px;
+header.navbar h1.logo img {
+  height: 80px;
 }
-.navbar-toggle {
+header.navbar .navbar-brand {
+  margin: 0;
+}
+header.navbar .visible-xs img {
+  height: 60px;
+}
+header.navbar .navbar-toggle {
   border: none;
+  margin: 15px 5px 0 0;
+  min-height: 70px;
 }
-.navbar-default .navbar-nav > li > a {
+header.navbar a {
+  text-decoration: none;
+  min-width: 7em;
+}
+header.navbar-default .navbar-nav > li > a {
   color: inherit;
-  padding: 0 0 0 1em;
+  padding: 0.5ex 15px;
 }
-.navbar-default .navbar-nav > li:first-child > a {
-  padding: 0
+header.navbar .navbar-nav {
+  margin: 0;
+  text-align: center;
 }
-.navbar-nav {
-  margin: 1ex 0;
+header.navbar .navbar-left {
+  text-align: left;
+}
+header.navbar .navbar-right {
+  text-align: right;
 }
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus,
@@ -81,10 +116,13 @@ a:focus {
   color: rgb(255, 97, 82);
   text-decoration: underline;
 }
-.navbar-default .navbar-collapse, .navbar-default .navbar-form {
-  border-color: rgb(18, 18, 18);
+.navbar-collapse {
+  margin: 0 0 1ex 0;
 }
-.navbar-default .navbar-toggle .icon-bar {
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+  border: none;
+}
+header.navbar-default .navbar-toggle .icon-bar {
   background-color: rgb(18, 18, 18);
 }
 
@@ -100,13 +138,25 @@ a:focus {
 .navbar-center .container {
   text-align: center;
 }
+@media (max-width: 767px) {
+  header.navbar a {
+    min-width: 3em;
+  }
+  header.navbar-default .navbar-nav > li > a {
+    padding: 0.25ex 5px;
+  }
+  header.navbar .navbar-left,
+  header.navbar .navbar-right {
+    text-align: center;
+  }
+}
 
 /* Carousel */
 .carousel {
   margin-top: -1px;
 }
 .carousel .item {
-  height: 460px;
+  height: 530px;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -122,8 +172,8 @@ a:focus {
 .carousel-caption > * {
   display: inline-block;
   background-color:rgba(0, 0, 0, 0.5);
-  font-size: 2em;
-  padding: 1.5ex 1.5em;
+  font-size: 3em;
+  padding: 2ex 2em;
   margin: 10% auto;
 }
 .carousel-control {
@@ -134,19 +184,68 @@ a:focus {
 .carousel-control.right {
   background-image: none;
 }
+@media (max-width: 767px) {
+  .carousel-caption {
+    left: 0;
+    right: 0;
+    font-size: 0.7em;
+  }
+  .carousel-caption > * {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+    margin: 40% auto;
+  }
+  .carousel-control {
+    display: none;
+  }
+}
+@media (max-width: 400px) {
+  .carousel-caption {
+    font-size: 0.5em;
+  }
+  .carousel-caption > * {
+    margin: 52% auto;
+  }
+}
+.carousel + footer.navbar {
+  display: none;
+}
 
-footer {
+.post-navigation {
+  margin: 5ex 0 0 0;
+}
+.nav-previous {
+  float: left;
+  max-width: 45%;
+}
+.nav-next {
+  float: right;
+  max-width: 45%;
+}
+
+body > footer.navbar-default {
   font-weight: bold;
   text-align: center;
-  margin: 3ex 0 6ex 0;
+  margin: 6ex 0 9ex 0;
+  background-color: transparent;
+  border: none;
 }
-footer hr {
+body > footer.navbar hr {
   border: none;
   border-top: 1px solid rgb(18, 18, 18);
-  margin-bottom: 3ex;
+  margin: 0;
+}
+body > footer.navbar-default .navbar-nav > li > a {
+  text-decoration: none;
+  color: rgb(18, 18, 18);
+}
+body > footer.navbar ul {
+  margin: 0 -15px;
 }
 
 /* content */
+/*
 .entry-content p {
    -moz-column-count: 3;
    -webkit-column-count: 3;
@@ -160,8 +259,128 @@ footer hr {
   -webkit-column-gap: 2em;
   column-gap: 2em;
 }
-hr {
+*/
+.entry-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.entry-content a {
+  color: #336699;
+  font-weight: 500;
+}
+.entry-content h1 {
+  margin: 3ex 0 1ex 0;
+  text-align: center;
+}
+.entry-content h2 {
+  margin: 3ex 0 0 0;
+}
+.entry-content ul {
+  list-style-type: none;
+  padding: 0;
+}
+.entry-content hr {
   border-color: rgb(18, 18, 18);
+  margin: 5ex 0 3ex 0;
+}
+.container.margin {
+  margin-top: 2ex;
+  padding: 0 5px;
+}
+.project-list {
+  padding: 10px;
+}
+.project-list a {
+  position: relative;
+  display: block;
+  text-align: center;
+}
+.project-list img {
+  margin: 0;
+}
+.project-list h1 {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: inline-block;
+  font-size: 2em;
+  padding: 30% 1.5em;
+  margin: 0;
+  color: transparent;
+  -webkit-transition: color 0.8s, background-color 0.4s;
+  -moz-transition: color 0.8s, background-color 0.4s;
+  -o-transition: color 0.8s, background-color 0.4s;
+  transition: color 0.8s, background-color 0.4s;
+}
+.project-list:hover h1 {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+}
+@media (max-width: 767px) {
+  .project-list h1 {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 1em 1ex;
+    top: 30%;
+    bottom: auto;
+    font-size: 1.2em;
+  }
+}
+
+.entry-meta {
+  color: #777;
+  font-size: 0.85em;
+}
+.page-header {
+  border-bottom: none;
+  text-align: center;
+  margin-bottom: 1ex;
+  max-width: 800px;
+  margin: 4ex auto 1ex auto;
+}
+
+
+.index {
+  margin-top: 1ex;
+}
+.news {
+  border-top: 1px solid rgb(72, 72, 72);
+  margin-top: 2ex;
+  padding-top: 2ex;
+}
+.news:first-child {
+  margin-top: 3px;
+  border-top: none;
+}
+.news .page-header {
+  margin-top: 0;
+  text-align: left;
+}
+.news header h1 {
+  text-align: left;
+  margin-top: 0;
+}
+.news .entry {
+  padding-left: 30px;
+}
+.news .more a {
+  border-bottom: 1px solid rgb(18, 18, 18);
+  -webkit-transition: color 0.4s, border-color 0.4s;
+  -moz-transition: color 0.4s, border-color 0.4s;
+  -o-transition: color 0.4s, border-color 0.4s;
+  transition: color 0.4s, border-color 0.4s;
+}
+.news .more a:hover {
+  text-decoration: none;
+  border-color: rgb(255, 97, 82);
+}
+@media (max-width: 767px) {
+  .news .entry {
+    padding: 0 15px;
+    margin-top: 3ex;
+  }
 }
 
 
@@ -192,16 +411,12 @@ img {
 	max-width: 100%;
 }
 img[class*="wp-image-"] {
-	margin-top: 10px;
-	margin-bottom: 10px;
+	margin-bottom: 1ex;
 }
 .wp-caption {
-	border: 1px solid #ccc;
 	margin-bottom: 10px;
 	max-width: 100%;
-	border: 1px solid #ccc;
-	border-radius: 4px;
-	padding: 0 10px;
+	border: none;
 }
 .wp-caption.aligncenter {
 	margin-bottom: 10px;
@@ -210,8 +425,9 @@ img[class*="wp-image-"] {
 	display: block;
 }
 .wp-caption .wp-caption-text {
-	text-align: center;
-	margin-top: 10px;
+	margin-top: 1ex;
+  color: #777;
+  font-size: 0.85em;
 }
 
 /* WP Gallery */
@@ -291,55 +507,3 @@ object {
 .widget select {
 	max-width: 100%;
 }
-
-/* Nested comments? They are threaded and nested already, you just need to add your own styling to finalize!  
- * For example with some margin, like the line below ;) Delete, modify, change classes in HTML if you desire another style */
- .comment .children { margin-left: 1.5em; } 
- 
-/*  
- == Quick CSS styling tips ==
-
- You can start off in a rough direction with some minimal styles.
- See below for some tips. ;)
-
-  
- == Want to have the whole site wrapped? ==  
-  
- Just fill the .container class with some background color to have a the whole site "wrapped".
- This works so easy because every main part is wrapped only once into a container class by bootstrap. 
- Try out by decommenting the next line and go from there. 
-	
- .container { background: #f9f9f9; border-right: 1px solid #eee; border-left: 1px solid #eee; }
-
-
- == Want to wrap just the content and sidebar in Bootstrap style? == 
-  
- That one is a great example to show that some things are much cleaner and easier to do via just adding some HTML classes. 
- In this case, we will add just one CSS class "panel", look for example at the beginning in content.php! 
- 
- 
- == Infinite Scrolling by Jetpack ==
- You can enable this cool feature by simply decommenting the lines below and make sure you use the same classes on the right place in your html.. 
-
-/* Globally hidden elements when Infinite Scroll is supported and in use. 
- * Older / Newer Posts Navigation (the pagination, must always be hidden), Theme Footer only when set to scrolling.. */ 
-
-/* 
-.infinite-scroll .page-links, 
-.infinite-scroll.neverending .site-footer { 
-	display: none;
-}
-*/
-
-/* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before */
-
-/*
-.infinity-end.neverending .site-footer {
-	display: block;
-} 
-*/
-
-/* Hey, if you don't need my comments anymore, just delete me! :)  */  	
-
-
-

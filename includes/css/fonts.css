@@ -5,6 +5,11 @@
 }
 @font-face {
   font-family: P22UndergroundPro;
+  font-weight: 500;
+  src: url("../fonts/P22UndergroundPro-Medium.otf") format("opentype");
+}
+@font-face {
+  font-family: P22UndergroundPro;
   font-weight: bold;
   src: url("../fonts/P22UndergroundPro-Demi.otf") format("opentype");
 }
